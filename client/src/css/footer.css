@@ -1,0 +1,37 @@
+.footer-cont {
+    background-color: rgb(203, 203, 203);
+    height: 15vh;
+    display: flex;
+    justify-content: space-around;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.footer-logo {
+    color: black;
+}
+
+.mid-footer {
+    text-align: center;
+    width: 40rem;
+    color: black;
+}
+
+
+.right-footer {
+    cursor: pointer;
+    color: black;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.right-footer a {
+    color: black;
+}
+
+.phone-num {
+    color: black;
+}
+

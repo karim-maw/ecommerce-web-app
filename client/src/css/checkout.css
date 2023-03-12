@@ -1,0 +1,57 @@
+.checkout-title {
+    font-size: 2rem;
+    margin: 1rem 0;
+    color: white;
+}
+
+.checkout-cont {
+    width: 100vw;
+    height: 80vh;
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.checkout-cont form {
+    background-color: rgb(206, 206, 206);
+    padding: 2rem;
+    border-radius: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    line-height: 2rem;
+    gap: 1rem;
+}
+
+@media (max-width: 50em) {
+    .checkout-cont form {
+        margin: 1rem;
+    }
+}
+
+.checkout-cont input {
+    background-color: rgb(225, 225, 225);
+    padding: 1rem;
+    font-size: 1.1rem;
+    border: 0.1rem solid black;
+    border-radius: 0.4rem;
+}
+
+.checkout-cont input:focus {
+    outline: none;
+}
+
+.checkout-cont p {
+    text-align: center;
+    color: black;
+}
+
+.checkout-cont button{
+    padding: 1.5rem;
+    border: 0.1rem black solid;
+    border-radius: 0.4rem;
+}
+

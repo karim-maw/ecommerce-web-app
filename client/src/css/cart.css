@@ -1,0 +1,123 @@
+.cart {
+    border-bottom: 0.1rem solid white;
+}
+
+.cart h1 {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.cartItems {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+@media (max-width: 50em) {
+    .cartItems {
+        justify-content: center;
+    }
+}
+
+.cart-card {
+    width: 43.75rem;
+    height: 15.625rem;
+    display: flex;
+    align-items: center;
+    box-shadow: 0rem 0.1875rem 0.9375rem rgba(0, 0, 0, 0.2);
+    border-radius: 1.5rem;
+    margin: 1.875rem;
+    animation: cart 1s;
+}
+
+@media (max-width: 50em) {
+    .cart-card {
+        width: 15rem;
+        height: 22rem;
+        flex-direction: column;
+    }
+    .cart-card img {
+        margin-right: 1rem;
+        margin-top: 1rem;
+    }
+
+}
+
+.cart-card img {
+    width: 15rem;
+    height: 100%;
+    border: 0.1rem solid rgb(135, 135, 135);
+    border-radius: 1.5rem;
+    margin-left: 1rem;
+}
+
+.cart-info {
+    width: 100%;
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cart-info h2 {
+    font-size: 1.7rem;
+}
+
+.edit-cart button {
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    border: 0.05rem solid black;
+    border-radius: 0.2rem;
+    width: 1.5rem;
+}
+
+.edit-cart button:hover {
+    background-color: white;
+    color: black;
+}
+
+.edit-cart input {
+    background-color: transparent;
+    border: 0.05rem solid white;
+    border-radius: 0.2rem;
+    width: 1.5rem;
+    text-align: center;
+    margin: 0 0.3rem;
+}
+
+@media (max-width: 50em) {
+    .edit-cart {
+        padding-bottom: 0.2rem;
+    }
+}
+
+.checkout-list {
+    border: 0.1rem solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 2rem;
+}
+
+.checkout-btn {
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    border: 0.05rem solid white;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.checkout-btn:hover {
+    background-color: white;
+    color: black;
+}
+
+
+@keyframes cart {
+    from {
+        opacity: 0;
+    }
+}

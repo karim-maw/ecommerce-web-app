@@ -1,0 +1,33 @@
+.admin-container {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.admin-options {
+    border: 0.1rem solid white;
+    border-radius: 0.4rem;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.admin-options h3{
+    margin: 2rem 0;
+}
+
+.admin-btn {
+    background: transparent;
+    color: white;
+    border: 0.1rem solid white;
+    border-radius: 0.4rem;
+    padding: 1rem 2rem;
+}
+
+.admin-btn:hover {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    transition: 0.5s ease-in;
+}

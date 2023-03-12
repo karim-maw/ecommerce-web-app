@@ -1,0 +1,86 @@
+:root {
+    --btn-color: rgb(204, 204, 204);
+    --hover: rgb(214, 214, 214)
+}
+
+
+.product-button-edit {
+    cursor: pointer;
+    background-color: var(--btn-color);
+    border: none;
+    width: 8%;
+    text-align: center;
+}
+
+.product-button-edit:hover {
+    background-color: var(--hover);
+}
+
+.product-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2rem;
+}
+
+.product-info img {
+    background-color: grey;
+    object-fit: cover;
+    width: 40%;
+    max-height: 40rem;
+}
+
+.product-customize {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    flex: 1;
+}
+
+@media (max-width: 50em) {
+    .product-customize {
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+}
+
+.select {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.product-customize h2 {
+    min-width: 10rem;
+    text-align: left;
+}
+
+.product-customize h3 {
+    font-size: 2rem;
+}
+
+.quantity {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.quantity p {
+    background-color: var(--btn-color);
+    color: black;
+    width: 1.5rem;
+    text-align: center;
+    border-radius: 0.3rem;
+}
+
+.quantity button {
+    padding: 0rem 0.4rem;
+    border-radius: 0.3rem;
+}
+
+.add-to-cart {
+    width: 10rem;
+    height: 3rem;
+}
+

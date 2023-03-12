@@ -1,0 +1,47 @@
+.login-title {
+    font-size: 2rem;
+    margin: 1rem 0;
+    color: white;
+}
+
+.login-cont {
+    width: 100vw;
+    height: 80vh;
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-cont form {
+    background-color: rgb(206, 206, 206);
+    padding: 2rem;
+    border-radius: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    line-height: 2rem;
+    gap: 1rem;
+}
+
+.login-cont input {
+    background-color: rgb(225, 225, 225);
+    padding: 1.5rem;
+    font-size: 1.1rem;
+    border: 0.1rem solid black;
+    border-radius: 0.4rem;
+}
+
+.login-cont input:focus {
+    outline: none;
+}
+
+.login-cont p {
+    text-align: center;
+}
+
+.login-cont button{
+    padding: 2rem;
+    border: 0.1rem black solid;
+    border-radius: 0.4rem;
+}
