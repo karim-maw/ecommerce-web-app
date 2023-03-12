@@ -5,62 +5,34 @@ const { verifyTokenAdmin } = require("./verifyToken");
 //create
 
 router.post("/", async (req, res) => {
-  const { userId } = req.body;
-  const { productId } = req.body;
+  const { userId, productId } = req.body;
+  console.log(productId)
   try {
     let cart = await Cart.findOne({ userId });
     if (!cart) {
       cart = new Cart({ userId, products: [{ productId }] });
-      await cart.save();
     } else {
-      const index = cart.products.findIndex(
+      const productIndex = cart.products.findIndex(
         (product) => product.productId === productId
       );
-      if (index > -1) {
-        cart.products[index].quantity += 1;
+      if (productIndex > -1) {
+        cart.products[productIndex].quantity += 1;
       } else {
         cart.products.push({ productId });
       }
-      await cart.save();
     }
+    await cart.save();
+
     res.status(200).send(cart);
   } catch (error) {
     console.error(error);
-    res.status(500).send('Internal Server Error');
+    res.status(500).send("Internal Server Error");
   }
 });
 
-// Assuming you have already implemented user authentication and have access to the userId
-const addToCart = async (req, res) => {
-  const { userId } = req.user;
-  const { productId } = req.body;
-  try {
-    let cart = await Cart.findOne({ userId });
-    if (!cart) {
-      cart = new Cart({ userId, products: [{ productId }] });
-      await cart.save();
-    } else {
-      const index = cart.products.findIndex(
-        (product) => product.productId === productId
-      );
-      if (index > -1) {
-        cart.products[index].quantity += 1;
-      } else {
-        cart.products.push({ productId });
-      }
-      await cart.save();
-    }
-    res.status(200).send(cart);
-  } catch (error) {
-    console.error(error);
-    res.status(500).send('Internal Server Error');
-  }
-};
-
-
 //get user order
 
-router.get("/find/:id", verifyTokenAdmin, async (req, res) => {
+router.get("/find/:id", async (req, res) => {
   try {
     const orders = await Cart.find({ userId: req.params.id });
     res.status(200).json(orders);
