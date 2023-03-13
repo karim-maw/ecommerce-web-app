@@ -3,6 +3,7 @@ import CartItems from "./CartItems";
 import "../../css/cart.css";
 import { useRecoilValue } from "recoil";
 import { cartState, userState } from "../../atoms";
+import axios from "axios";
 
 const Cart = () => {
   const items = useRecoilValue(cartState);
@@ -12,16 +13,21 @@ const Cart = () => {
   useEffect(() => {
     const getCart = async () => {
       try {
-        const response = await axios.get("/api/cart/find/" + user._id);
-        setCart(response.data.products);
-        console.log("response.data")
-      } catch (error) {}
+        const response = await axios.get("http://localhost:5000/api/cart/find/" + user._id);
+        setCart(response.data);
+        console.log(response.data);
+      } catch (error) {
+        console.log(error)
+      }
     };
     getCart();
   }, []);
-  
 
-  // console.log(cart)
+  useEffect(() => {
+    console.log("hello")
+  }, [])
+  console.log(user._id)
+  
 
   return (
     <div className="cart">
@@ -29,10 +35,10 @@ const Cart = () => {
         <h1>Your cart items</h1>
       </div>
       <div className="cartItems">
-        {/* {cart.map((item) => (
+        {cart.length > 0 && cart[0].products.map((item) => (
           <CartItems key={item._id} item={item} />
-        ))} */}
-        {cart}
+        ))}
+        {/* {cart} */}
       </div>
       <div className="checkout-list">
         <h1>Summary</h1>

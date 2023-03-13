@@ -39,6 +39,8 @@ const Product = () => {
     getProduct();
   }, [id]);
 
+  console.log(product._id)
+
   const addToCart = () => {
     setStoredCart(true);
     setCartItem([...cartItem, product]);
@@ -50,7 +52,7 @@ const Product = () => {
         userId,
         products: [
           {
-            productId: productId,
+            productId,
           },
         ],
       });
@@ -107,7 +109,7 @@ const Product = () => {
             </option>
           </select>
           <button
-            onClick={() => addToCart2(product._id, user._id)}
+            onClick={() => addToCart2(`${product._id}`, user._id)}
             disabled={storedCart}
             className="add-to-cart product-button-edit"
           >
